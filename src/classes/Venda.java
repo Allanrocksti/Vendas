@@ -25,11 +25,13 @@ public class Venda {
 	
 	public String finalizarVenda() {
 		
-		String string = "            VENDA            \n";
+		String string = "         VENDA         \n";
 				
 		for (ItemVenda item : lancamentos) {
-			string += "\n" + item.getQuantidade() + item.getProduto().getDescricao() + item.getProduto().getPreco();
+			string += "\n" + item.getQuantidade() + " - " + item.getProduto().getDescricao() + " - " + item.getProduto().getPreco();
 		}
+		
+		string += "\n\nTotal: "  + this.total();
 		
 		return string;
 	}
@@ -41,15 +43,5 @@ public class Venda {
 	public void setData(Date data) {
 		this.data = data;
 	}
-
-	public List<ItemVenda> getLancamentos() {
-		return lancamentos;
-	}
-
-	public void setLancamentos(List<ItemVenda> lancamentos) {
-		this.lancamentos = lancamentos;
-	}
-	
-	
 	
 }

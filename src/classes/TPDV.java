@@ -26,24 +26,30 @@ public class TPDV implements Catalogo {
 		Venda venda = new Venda();
 		venda.setData(new Date(System.currentTimeMillis()));
 		
-		Produto produto1 = new Produto("CafÃ©", 4.9F);
+		Produto produto1 = new Produto("Café", 4.9F);
 		ItemVenda item1 = new ItemVenda(5, produto1);
 		venda.addItemVenda(item1);
 		
-		Produto produto2 = new Produto("AÃ§Ãºcar", 2.2F);
+		Produto produto2 = new Produto("Açúcar", 2.2F);
 		ItemVenda item2 = new ItemVenda(10, produto2);
 		venda.addItemVenda(item2);
 		
-		Produto produto3 = new Produto("MacarrÃ£o", 1.4F);
+		Produto produto3 = new Produto("Macarrão", 1.4F);
 		ItemVenda item3 = new ItemVenda(7, produto3);
 		venda.addItemVenda(item3);
 		
-		venda.finalizarVenda();
+		System.out.println(venda.finalizarVenda());
 		
 		this.vendas.add(venda);
 		
 	}
 
+	public void mostrarVendas() {
+		for (Venda venda : vendas) {
+			System.out.println(venda.getData());
+		}
+	}
+	
 	public List<Produto> getProdutos() {
 		return produtos;
 	}
